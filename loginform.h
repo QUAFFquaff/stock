@@ -1,4 +1,4 @@
-#ifndef LOGINFORM_H
+﻿#ifndef LOGINFORM_H
 #define LOGINFORM_H
 
 

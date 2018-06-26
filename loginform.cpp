@@ -1,10 +1,7 @@
-#include "dialog.h"
+﻿#include "dialog.h"
 #include "loginform.h"
 #include "ui_loginform.h"
 #include "quiwidget.h"
-
-
-//#include "mainform.h"
 
 #include <QGridLayout>
 
@@ -40,9 +37,6 @@ QWidget *LoginForm::getDragnWidget()
 
 void LoginForm::doLoginButClick()
 {
-
-//    MainForm*m=new MainForm;
-//    m->show();
 //    this->hide();
     Dialog *d = new Dialog;
     d->show();
