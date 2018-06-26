@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>top.png</file>
+        <file>xnylh.png</file>
+        <file>check.png</file>
+    </qresource>
+</RCC>
