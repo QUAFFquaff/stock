@@ -1,16 +1,13 @@
 ﻿#ifndef LOGINFORM_H
 #define LOGINFORM_H
 
-
-#include "moveableframelesswindow.h"
-
 #include <QWidget>
 
 namespace Ui {
 class LoginForm;
 }
 
-class LoginForm :public MoveableFramelessWindow
+class LoginForm :public QWidget
 {
     Q_OBJECT
 

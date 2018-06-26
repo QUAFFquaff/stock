@@ -29,7 +29,6 @@ SOURCES += main.cpp\
     form/quiwidget.cpp \
     demo/sliderbar.cpp \
     dialog.cpp \
-    moveableframelesswindow.cpp \
     demo/appinit.cpp
 
 HEADERS  += \
@@ -38,7 +37,6 @@ HEADERS  += \
     form/quiwidget.h \
     dialog.h \
     demo/sliderbar.h \
-    moveableframelesswindow.h \
     demo/appinit.h
 
 FORMS    += \
