@@ -14,7 +14,7 @@ MOC_DIR         = temp/moc
 RCC_DIR         = temp/rcc
 UI_DIR          = temp/ui
 OBJECTS_DIR     = temp/obj
-DESTDIR         = $$PWD/bin
+#DESTDIR         = $$PWD/bin
 win32:RC_FILE   = other/main.rc
 PRECOMPILED_HEADER  = head.h
 
