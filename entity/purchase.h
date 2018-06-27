@@ -9,24 +9,43 @@ class Purchase
 public:
     Purchase();
     ~Purchase();
-    void setId(int id);
-    void getId();
-    void setProductId(int productId);
-    void getProductId();
-    void setUnitPrice(double unitPrice);
-    void getUnitPrice();
-    void setTotalPrice(double totalPrice);
-    void getTotalPrice();
-    void setAmount(double amount);
-    void getAmount();
-    void setIdentify(int identify);
-    void getIdentify();
-    void setAdminId(int adminId);
-    void getAdminId();
-    void setFinished(bool finished);
-    void getFinished();
+
 private:
     int id;
+public:
+    int getId() const;
+
+    void setId(int id);
+
+    int getProductId() const;
+
+    void setProductId(int productId);
+
+    double getUnitPrice() const;
+
+    void setUnitPrice(double unitPrice);
+
+    double getTotalPrice() const;
+
+    void setTotalPrice(double totalPrice);
+
+    double getAmount() const;
+
+    void setAmount(double amount);
+
+    int getIdentify() const;
+
+    void setIdentify(int identify);
+
+    int getAdminId() const;
+
+    void setAdminId(int adminId);
+
+    bool isFinished() const;
+
+    void setFinished(bool finished);
+
+private:
     int productId;
     double unitPrice;
     double totalPrice;

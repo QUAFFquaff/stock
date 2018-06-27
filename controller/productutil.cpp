@@ -10,3 +10,8 @@ ProductUtil::~ProductUtil()
 
 }
 
+bool ProductUtil::deleteItem()
+{
+
+}
+

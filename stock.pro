@@ -49,7 +49,8 @@ SOURCES += main.cpp\
     tab/form41.cpp \
     tab/form51.cpp \
     tab/form52.cpp \
-    tab/form53.cpp
+    tab/form53.cpp \
+    entity/user.cpp
 
 HEADERS  += \
     loginform.h \
@@ -78,7 +79,8 @@ HEADERS  += \
     tab/form41.h \
     tab/form51.h \
     tab/form52.h \
-    tab/form53.h
+    tab/form53.h \
+    entity/user.h
 
 FORMS    += \
     loginform.ui \

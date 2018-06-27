@@ -9,23 +9,40 @@ class Sale
 public:
     Sale();
     ~Sale();
+    int getId() const;
+
     void setId(int id);
-    void getId();
+
+    int getProductId() const;
+
     void setProductId(int productId);
-    void getProductId();
+
+    int getAdminId() const;
+
     void setAdminId(int adminId);
-    void getAdminId();
+
+    double getUnitPrice() const;
+
     void setUnitPrice(double unitPrice);
-    void getUnitPrice();
+
+    double getTotalPrice() const;
+
     void setTotalPrice(double totalPrice);
-    void getTotalPrice();
+
+    double getAmount() const;
+
     void setAmount(double amount);
-    void getAmount();
+
+    int getIdentify() const;
+
     void setIdentify(int identify);
-    void getIdentify();
-    void setDate(string date);
-    void getDate();
+
+    const string &getDate() const;
+
+    void setDate(const string &date);
+
 private:
+
     int id;
     int productId;
     int adminId;
