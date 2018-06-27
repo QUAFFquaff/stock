@@ -1,8 +1,10 @@
 #ifndef EMPLOYEE_H
 #define EMPLOYEE_H
+#include "user.h"
+
 #include <string>
 using namespace std;
-class Employee
+class Employee : public User
 {
 public:
     Employee();

@@ -40,7 +40,8 @@ SOURCES += main.cpp\
     controller/saleutil.cpp \
     controller/productutil.cpp \
     controller/providerutil.cpp \
-    controller/purchaseutil.cpp
+    controller/purchaseutil.cpp \
+    entity/user.cpp
 
 HEADERS  += \
     loginform.h \
@@ -59,7 +60,8 @@ HEADERS  += \
     controller/saleutil.h \
     controller/productutil.h \
     controller/providerutil.h \
-    controller/purchaseutil.h
+    controller/purchaseutil.h \
+    entity/user.h
 
 FORMS    += \
     loginform.ui \
