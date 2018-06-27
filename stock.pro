@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui network
+QT       += core gui network sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -42,7 +42,14 @@ SOURCES += main.cpp\
     controller/saleutil.cpp \
     controller/productutil.cpp \
     controller/providerutil.cpp \
-    controller/purchaseutil.cpp
+    controller/purchaseutil.cpp \
+    tab/form21.cpp \
+    tab/form22.cpp \
+    tab/form31.cpp \
+    tab/form41.cpp \
+    tab/form51.cpp \
+    tab/form52.cpp \
+    tab/form53.cpp
 
 HEADERS  += \
     loginform.h \
@@ -63,13 +70,28 @@ HEADERS  += \
     controller/saleutil.h \
     controller/productutil.h \
     controller/providerutil.h \
-    controller/purchaseutil.h
+    controller/purchaseutil.h \
+    controller/database.h \
+    tab/form21.h \
+    tab/form22.h \
+    tab/form31.h \
+    tab/form41.h \
+    tab/form51.h \
+    tab/form52.h \
+    tab/form53.h
 
 FORMS    += \
     loginform.ui \
     dialog.ui \
     tab/form11.ui \
-    tab/form12.ui
+    tab/form12.ui \
+    tab/form21.ui \
+    tab/form22.ui \
+    tab/form31.ui \
+    tab/form41.ui \
+    tab/form51.ui \
+    tab/form52.ui \
+    tab/form53.ui
 
 RESOURCES += \
     other/font.qrc \

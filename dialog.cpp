@@ -5,8 +5,16 @@
 #include "qtimer.h"
 #include "qdebug.h"
 #include <qstackedwidget.h>
+#include <controller/database.h>
 #include "tab/form11.h"
 #include "tab/form12.h"
+#include "tab/form21.h"
+#include "tab/form22.h"
+#include "tab/form31.h"
+#include "tab/form41.h"
+#include "tab/form51.h"
+#include "tab/form52.h"
+#include "tab/form53.h"
 
 Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
@@ -20,6 +28,13 @@ Dialog::Dialog(QWidget *parent) :
     ui->mainLayout->addWidget(stackedWidget);
     Form11 *f11 = new Form11;stackedWidget->addWidget(f11);
     Form12 *f12 = new Form12;stackedWidget->addWidget(f12);
+    Form21 *f21 = new Form21;stackedWidget->addWidget(f21);
+    Form22 *f22 = new Form22;stackedWidget->addWidget(f22);
+    Form31 *f31 = new Form31;stackedWidget->addWidget(f31);
+    Form41 *f41 = new Form41;stackedWidget->addWidget(f41);
+    Form51 *f51 = new Form51;stackedWidget->addWidget(f51);
+    Form52 *f52 = new Form52;stackedWidget->addWidget(f52);
+    Form53 *f53 = new Form53;stackedWidget->addWidget(f53);
 }
 
 Dialog::~Dialog()
@@ -89,19 +104,19 @@ void Dialog::topItemChanged(int , const QString &item)
     }
     else if(item == "销售管理"){
         ui->widgetNavLeft->setItems("销售记录管理;销售统计");
-        //stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(2);
     }
     else if(item == "进货管理"){
         ui->widgetNavLeft->setItems("进货记录管理");
-        //stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(4);
     }
     else if(item == "库存管理"){
         ui->widgetNavLeft->setItems("商品管理");
-        //stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(5);
     }
     else if(item == "系统管理"){
         ui->widgetNavLeft->setItems("添加管理员;修改资料;修改密码");
-        //stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(6);
     }
 }
 
@@ -113,6 +128,27 @@ void Dialog::leftItemChanged(int, const QString &item)
     }
     else if(item == "进货商管理"){
         stackedWidget->setCurrentIndex(1);
+    }
+    else if(item == "销售记录管理"){
+        stackedWidget->setCurrentIndex(2);
+    }
+    else if(item == "销售统计"){
+        stackedWidget->setCurrentIndex(3);
+    }
+    else if(item == "进货记录管理"){
+        stackedWidget->setCurrentIndex(4);
+    }
+    else if(item == "商品管理"){
+        stackedWidget->setCurrentIndex(5);
+    }
+    else if(item == "添加管理员"){
+        stackedWidget->setCurrentIndex(6);
+    }
+    else if(item == "修改资料"){
+        stackedWidget->setCurrentIndex(7);
+    }
+    else if(item == "修改密码"){
+        stackedWidget->setCurrentIndex(8);
     }
 }
 

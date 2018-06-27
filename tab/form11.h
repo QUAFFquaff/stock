@@ -1,4 +1,4 @@
-#ifndef FORM11_H
+﻿#ifndef FORM11_H
 #define FORM11_H
 
 #include <QWidget>
@@ -14,6 +14,9 @@ class Form11 : public QWidget
 public:
     explicit Form11(QWidget *parent = 0);
     ~Form11();
+
+private slots:
+    void on_pushButton_clicked();
 
 private:
     Ui::Form11 *ui;

@@ -9,12 +9,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>634</width>
-    <height>479</height>
+    <width>433</width>
+    <height>332</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>登陆</string>
+   <string>登录</string>
   </property>
   <property name="windowIcon">
    <iconset>
@@ -197,9 +197,15 @@
           <rect>
            <x>369</x>
            <y>0</y>
-           <width>51</width>
-           <height>51</height>
+           <width>60</width>
+           <height>60</height>
           </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>60</width>
+           <height>60</height>
+          </size>
          </property>
          <property name="maximumSize">
           <size>
