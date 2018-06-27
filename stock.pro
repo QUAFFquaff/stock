@@ -29,7 +29,18 @@ SOURCES += main.cpp\
     form/quiwidget.cpp \
     demo/sliderbar.cpp \
     dialog.cpp \
-    demo/appinit.cpp
+    demo/appinit.cpp \
+    entity/employee.cpp \
+    controller/salecontroller.cpp \
+    controller/util.cpp \
+    entity/provider.cpp \
+    entity/product.cpp \
+    entity/sale.cpp \
+    entity/purchase.cpp \
+    controller/saleutil.cpp \
+    controller/productutil.cpp \
+    controller/providerutil.cpp \
+    controller/purchaseutil.cpp
 
 HEADERS  += \
     loginform.h \
@@ -37,7 +48,18 @@ HEADERS  += \
     form/quiwidget.h \
     dialog.h \
     demo/sliderbar.h \
-    demo/appinit.h
+    demo/appinit.h \
+    entity/employee.h \
+    controller/salecontroller.h \
+    controller/util.h \
+    entity/provider.h \
+    entity/product.h \
+    entity/sale.h \
+    entity/purchase.h \
+    controller/saleutil.h \
+    controller/productutil.h \
+    controller/providerutil.h \
+    controller/purchaseutil.h
 
 FORMS    += \
     loginform.ui \

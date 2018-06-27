@@ -98,6 +98,7 @@ void Dialog::leftItemChanged(int, const QString &item)
     //左侧菜单函数
     if(item == "查询职工"){
         ui->label->setText(item);
+
     }
     else if(item == "添加职工"){
         ui->label->setText(item);
