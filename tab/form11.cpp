@@ -16,19 +16,14 @@ Form11::~Form11()
 
 void Form11::on_pushButton_clicked()
 {
-    if(!createConnection()){
-        qDebug()<<"error";
-    }
-    else{
-        QSqlDatabase db = QSqlDatabase::database("connection");
-        QSqlQuery query(db);
-        QString text;
-        query.exec("select  * from provider");
-        while(query.next())
-        {
-            text = query.value(0).toString()+query.value(1).toString()+ query.value(2).toString() +query.value(3).toString();
-            ui->textEdit->setText(text);
-        }
+    QSqlDatabase db = QSqlDatabase::database("connection");
+    QSqlQuery query(db);
+    QString text;
+    query.exec("select  * from provider");
+    while(query.next())
+    {
+        text = query.value(0).toString()+query.value(1).toString()+ query.value(2).toString() +query.value(3).toString();
+        ui->textEdit->setText(text);
     }
 
 }
