@@ -14,6 +14,8 @@ class LoginForm :public QWidget
 public:
     explicit LoginForm(QWidget *parent = 0);
     ~LoginForm();
+    void load();
+    void save();
 
 protected:
 
@@ -28,6 +30,13 @@ private slots:
 
     void on_btnMenu_Close_clicked();
 
+    /**
+     *
+     * 记住密码
+     */
+    bool writeInit(QString path,QString user_key,QString user_value);
+    bool readInit(QString path,QString user_key,QString &user_value);
+    bool rememberPass();
 private:
     Ui::LoginForm *ui;
 };
