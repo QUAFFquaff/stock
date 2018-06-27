@@ -4,6 +4,7 @@
 #include <QApplication>
 #include "login.h"
 #include "loginform.h"
+#include <controller/database.h>
 
 int main(int argc, char *argv[])
 {
@@ -17,9 +18,13 @@ int main(int argc, char *argv[])
 
     QUIWidget::setCode();
     AppInit::Instance()->start();
-//    Dialog *d = new Dialog;
-//    d->show();
+
+    if(!createConnection()){
+        qDebug()<<"error";
+    }
+
     LoginForm *login = new LoginForm;
     login->show();
+
     return a.exec();
 }
