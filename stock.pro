@@ -29,7 +29,9 @@ SOURCES += main.cpp\
     form/quiwidget.cpp \
     demo/sliderbar.cpp \
     dialog.cpp \
-    demo/appinit.cpp
+    demo/appinit.cpp \
+    tab/form11.cpp \
+    tab/form12.cpp
 
 HEADERS  += \
     loginform.h \
@@ -37,11 +39,15 @@ HEADERS  += \
     form/quiwidget.h \
     dialog.h \
     demo/sliderbar.h \
-    demo/appinit.h
+    demo/appinit.h \
+    tab/form11.h \
+    tab/form12.h
 
 FORMS    += \
     loginform.ui \
     dialog.ui \
+    tab/form11.ui \
+    tab/form12.ui
 
 RESOURCES += \
     other/font.qrc \

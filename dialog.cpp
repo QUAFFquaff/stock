@@ -4,6 +4,9 @@
 #include "quiwidget.h"
 #include "qtimer.h"
 #include "qdebug.h"
+#include <qstackedwidget.h>
+#include "tab/form11.h"
+#include "tab/form12.h"
 
 Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
@@ -13,6 +16,10 @@ Dialog::Dialog(QWidget *parent) :
     this->initForm();
     QUIWidget::setFormInCenter(this);
     QTimer::singleShot(100, this, SLOT(initIndex()));
+    stackedWidget = new QStackedWidget;
+    ui->mainLayout->addWidget(stackedWidget);
+    Form11 *f11 = new Form11;stackedWidget->addWidget(f11);
+    Form12 *f12 = new Form12;stackedWidget->addWidget(f12);
 }
 
 Dialog::~Dialog()
@@ -36,7 +43,7 @@ void Dialog::initForm()
     IconHelper::Instance()->setIcon(ui->btnMenu_Max, QChar(0xF067));
     IconHelper::Instance()->setIcon(ui->btnMenu_Close, QChar(0xF00d));
 
-    QString items = "查询职工;添加职工;修改职工;删除职工;查询进货商;添加进货商;修改进货商";
+    QString items = "职工管理;进货商管理";
     ui->widgetNavLeft->setItems(items);
     ui->widgetNavLeft->setHorizontal(false);
     ui->widgetNavLeft->setLineWidth(5);
@@ -77,45 +84,35 @@ void Dialog::topItemChanged(int , const QString &item)
 {
     ui->widgetNavLeft->moveFirst();
     if(item == "人事管理"){
-        ui->widgetNavLeft->setItems("查询职工;添加职工;修改职工;删除职工;查询进货商;添加进货商;修改进货商");
+        ui->widgetNavLeft->setItems("职工管理;进货商管理");
+        stackedWidget->setCurrentIndex(0);
     }
     else if(item == "销售管理"){
-        ui->widgetNavLeft->setItems("查询销售记录;添加销售纪录;撤回销售记录;销售统计");
+        ui->widgetNavLeft->setItems("销售记录管理;销售统计");
+        //stackedWidget->setCurrentIndex(0);
     }
     else if(item == "进货管理"){
-        ui->widgetNavLeft->setItems("查询进货记录;添加进货记录;撤回进货记录");
+        ui->widgetNavLeft->setItems("进货记录管理");
+        //stackedWidget->setCurrentIndex(0);
     }
     else if(item == "库存管理"){
-        ui->widgetNavLeft->setItems("查询商品;添加商品;修改商品;删除商品;");
+        ui->widgetNavLeft->setItems("商品管理");
+        //stackedWidget->setCurrentIndex(0);
     }
     else if(item == "系统管理"){
         ui->widgetNavLeft->setItems("添加管理员;修改资料;修改密码");
+        //stackedWidget->setCurrentIndex(0);
     }
 }
 
 void Dialog::leftItemChanged(int, const QString &item)
 {
     //左侧菜单函数
-    if(item == "查询职工"){
-        ui->label->setText(item);
+    if(item == "职工管理"){
+        stackedWidget->setCurrentIndex(0);
     }
-    else if(item == "添加职工"){
-        ui->label->setText(item);
-    }
-    else if(item == "修改职工"){
-        ui->label->setText(item);
-    }
-    else if(item == "删除职工"){
-        ui->label->setText(item);
-    }
-    else if(item == "查询进货商"){
-        ui->label->setText(item);
-    }
-    else if(item == "添加进货商"){
-        ui->label->setText(item);
-    }
-    else if(item == "修改进货商"){
-        ui->label->setText(item);
+    else if(item == "进货商管理"){
+        stackedWidget->setCurrentIndex(1);
     }
 }
 
