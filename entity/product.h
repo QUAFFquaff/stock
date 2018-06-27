@@ -9,13 +9,13 @@ public:
     Product();
     ~Product();
     void setId(int id);
-        void getId();
-        void setType(string type);
-        void getType();
-        void setPrice(double price);
-        void getPrice();
-        void setAmount(double amount);
-        void getAmount();
+    int getId();
+    void setType(string type);
+    string getType();
+    void setPrice(double price);
+    double getPrice();
+    void setAmount(double amount);
+    double getAmount();
 private:
     int id;
     string name;

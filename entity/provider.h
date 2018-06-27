@@ -8,13 +8,13 @@ public:
     Provider();
     ~Provider();
     void setId(int id);
-    void getId();
+    int getId();
     void setName(string name);
-    void getName();
+    string getName();
     void setPrincipal(string principal);
-    void getPrincipal();
+    string getPrincipal();
     void setTel(long tel);
-    void getTel();
+    long getTel();
 private:
     int id;
     string name;

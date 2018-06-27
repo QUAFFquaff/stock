@@ -5,6 +5,8 @@
 #include <string>
 
 #include <controller/util.h>
+#include "../controller/util.h"
+
 using namespace std;
 
 class User
@@ -12,14 +14,32 @@ class User
 public:
     User();
     ~User();
-    void setId(int id);
-    void getId();
-    void setName(string name);
-    void getName();
-    void setAuthority(string authority);
-    void getAuthority();
+
+
 private:
     int id;
+public:
+    int getId() const;
+
+    void setId(int id);
+
+    const string &getUsename() const;
+
+    void setUsename(const string &usename);
+
+    const string &getPassword() const;
+
+    void setPassword(const string &password);
+
+    const string &getAuthority() const;
+
+    void setAuthority(const string &authority);
+
+    Util *getUtil() const;
+
+    void setUtil(Util *util);
+
+private:
     string usename;
     string password;
     string authority;
