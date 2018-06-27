@@ -37,6 +37,10 @@ private slots:
     bool writeInit(QString path,QString user_key,QString user_value);
     bool readInit(QString path,QString user_key,QString &user_value);
     bool rememberPass();
+    void on_checkBox_2_clicked(bool checked);
+
+    void on_checkBox_clicked();
+
 private:
     Ui::LoginForm *ui;
 };

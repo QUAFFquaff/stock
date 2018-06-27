@@ -12,7 +12,7 @@ LoginForm::LoginForm(QWidget *parent) :
     ui(new Ui::LoginForm)
 {
     ui->setupUi(this);
-    load();
+//    load();
     this->setProperty("canMove", true);
     this->setWindowFlags(Qt::FramelessWindowHint | Qt::WindowSystemMenuHint | Qt::WindowMinMaxButtonsHint);
     setAttribute(Qt::WA_TranslucentBackground);
@@ -20,16 +20,25 @@ LoginForm::LoginForm(QWidget *parent) :
     IconHelper::Instance()->setIcon(ui->btnMenu_Min, QChar(0xF068));
     IconHelper::Instance()->setIcon(ui->btnMenu_Close, QChar(0xF00d));
 
-    if(ui->checkBox->isChecked()){
-        qDebug()<<"checked";
+
+
         QString username;
         QString password;
+        QString rem_state;
+        QString auto_state;
         bool is_un = readInit(QString("./user.ini"), "username", username);
         bool is_pass = readInit(QString("./user.ini"), "password", password);
+        readInit(QString("./user.ini"), "remember_states", rem_state);
+        readInit(QString("./user.ini"), "auto_states", auto_state);
         ui->lineEdit_un->setText(username);
         ui->lineEdit_pass->setText(password);
+        ui->checkBox->setChecked(rem_state=="1");
+        ui->checkBox_2->setChecked(auto_state=="1");
+    if(ui->checkBox_2->isChecked()){
 
+        doLoginButClick();
     }
+
 
     //关联登录按钮点击
     connect(ui->pushButton_login,SIGNAL(clicked()),this,SLOT(doLoginButClick()));
@@ -123,7 +132,7 @@ bool LoginForm::rememberPass()
         qDebug()<<"checked";
         QString username = ui->lineEdit_un->text();  //账号
         QString password = ui->lineEdit_pass->text();  //密码
-        qDebug()<<password;
+
         bool is_address = writeInit(QString("./user.ini"), "username", username);
         bool is_port = writeInit(QString("./user.ini"), "password", password);
 
@@ -135,4 +144,21 @@ bool LoginForm::rememberPass()
         qDebug()<<"not checked";
     }
 
+    writeInit(QString("./user.ini"), "remember_states", QString::number(ui->checkBox->isChecked()));
+    writeInit(QString("./user.ini"), "auto_states", QString::number(ui->checkBox_2->isChecked()));
+
+}
+
+void LoginForm::on_checkBox_2_clicked(bool checked)
+{
+    if(!ui->checkBox->isChecked() && ui->checkBox_2->isChecked()){
+        ui->checkBox->setChecked(true);
+    }
+}
+
+void LoginForm::on_checkBox_clicked()
+{
+    if(!ui->checkBox->isChecked() && ui->checkBox_2->isChecked()){
+        ui->checkBox_2->setChecked(false);
+    }
 }
