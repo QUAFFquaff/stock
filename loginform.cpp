@@ -76,25 +76,23 @@ void LoginForm::doLoginButClick()
     QSqlDatabase db = QSqlDatabase::database("connection");
     QSqlQuery query(db);
     QString text;
-//    query.exec("insert into employee values(000,\"Cody\",\"ccc\",\"21232f297a57a5a743894a0e4a801fc3\",1,\"13040319980529116\","
-//               "9051,0,\"2016-10-11\",\"1998-05-29\",\"admin\") ");
-    query.exec("select * from employee where username = \"ccc\"");
-    while(query.next())
-    {
-//        text = query.value(0).toString()+query.value(1).toString()+ query.value(2).toString() +query.value(3).toString();
-//        ui->textEdit->setText(text);
+    query.exec("insert into employee values(000,\"Izerille\",\"ez\",\"5f4dcc3b5aa765d61d8327deb882cf99\",0,\"33040319980520661x\","
+               "6000,9,\"2016-10-11\",\"1998-05-20\",\"boss\") ");
+//    query.exec("select * from employee where username = \""+ui->lineEdit_un->text()+"\"");
+//    while(query.next())
+//    {
         qDebug()<<query.value(3);
-        text = query.value(3).toString();
-    }
+//        text = query.value(3).toString();
+//    }
 
 
-    if (text == strPwdMd5){
-        rememberPass();
-        Dialog *d = new Dialog;
-        d->show();
-    }else{
-        qDebug()<<"wrong password";
-    }
+//    if (text == strPwdMd5){
+//        rememberPass();
+//        Dialog *d = new Dialog;
+//        d->show();
+//    }else{
+//        qDebug()<<"wrong password";
+//    }
 
 }
 
