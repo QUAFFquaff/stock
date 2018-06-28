@@ -20,8 +20,6 @@ LoginForm::LoginForm(QWidget *parent) :
     IconHelper::Instance()->setIcon(ui->btnMenu_Min, QChar(0xF068));
     IconHelper::Instance()->setIcon(ui->btnMenu_Close, QChar(0xF00d));
 
-
-
         QString username;
         QString password;
         QString rem_state;
