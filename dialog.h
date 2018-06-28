@@ -1,4 +1,5 @@
-﻿#ifndef DIALOG_H
+﻿void on_pushButton_clicked();
+#ifndef DIALOG_H
 #define DIALOG_H
 
 #include <QDialog>
@@ -29,6 +30,7 @@ private slots:
     void on_btnMenu_Min_clicked();
     void on_btnMenu_Max_clicked();
     void on_btnMenu_Close_clicked();
+    void on_pushButton_clicked();
 };
 
 #endif // DIALOG_H

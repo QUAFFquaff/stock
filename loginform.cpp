@@ -5,6 +5,8 @@
 #include "demo/appinit.h"
 
 #include <QGridLayout>
+#include <qsqldatabase.h>
+#include <qsqlquery.h>
 
 
 LoginForm::LoginForm(QWidget *parent) :
@@ -50,22 +52,7 @@ LoginForm::~LoginForm()
     delete ui;
 }
 
-void LoginForm::load()
-{
 
-    QSettings settings;
-    settings.beginGroup("./checkBox");
-    ui->checkBox->setChecked(settings.value("check1", true).toBool());
-    settings.endGroup();
-}
-
-void LoginForm::save()
-{
-    QSettings settings;
-    settings.beginGroup("./checkBox");
-    settings.setValue("check1", ui->checkBox->isChecked());
-    settings.endGroup();
-}
 
 QWidget *LoginForm::getDragnWidget()
 {
@@ -75,10 +62,40 @@ QWidget *LoginForm::getDragnWidget()
 void LoginForm::doLoginButClick()
 {
 //    this->hide();
-    rememberPass();
-    Dialog *d = new Dialog;
-    d->show();
-    save();
+    QString strPwd5 = ui->lineEdit_pass->text();
+    if(NULL == strPwd5)
+        return;
+
+    QByteArray bytePwd = strPwd5.toLatin1();
+    QByteArray bytePwdMd5 = QCryptographicHash::hash(bytePwd, QCryptographicHash::Md5);
+    QString strPwdMd5 = bytePwdMd5.toHex();
+//    ui->lineEdit_pass->setText(strPwdMd5);
+    qDebug()<<strPwdMd5<<"    "<<bytePwdMd5<<endl;
+
+
+    QSqlDatabase db = QSqlDatabase::database("connection");
+    QSqlQuery query(db);
+    QString text;
+//    query.exec("insert into employee values(000,\"Cody\",\"ccc\",\"21232f297a57a5a743894a0e4a801fc3\",1,\"13040319980529116\","
+//               "9051,0,\"2016-10-11\",\"1998-05-29\",\"admin\") ");
+    query.exec("select * from employee where username = \"ccc\"");
+    while(query.next())
+    {
+//        text = query.value(0).toString()+query.value(1).toString()+ query.value(2).toString() +query.value(3).toString();
+//        ui->textEdit->setText(text);
+        qDebug()<<query.value(3);
+        text = query.value(3).toString();
+    }
+
+
+    if (text == strPwdMd5){
+        rememberPass();
+        Dialog *d = new Dialog;
+        d->show();
+    }else{
+        qDebug()<<"wrong password";
+    }
+
 }
 
 void LoginForm::on_btnMenu_Min_clicked()

@@ -134,7 +134,7 @@
 /*定义头像样式*/
 #label_touxiang{
 	border-radius:4px;	
-	border-image: url(:/img/xnylh.png) 1;
+	border-image: url(:/img/avatar.jpg) 1;
 	
 }</string>
   </property>
