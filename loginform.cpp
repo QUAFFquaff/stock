@@ -22,18 +22,18 @@ LoginForm::LoginForm(QWidget *parent) :
     IconHelper::Instance()->setIcon(ui->btnMenu_Min, QChar(0xF068));
     IconHelper::Instance()->setIcon(ui->btnMenu_Close, QChar(0xF00d));
 
-        QString username;
-        QString password;
-        QString rem_state;
-        QString auto_state;
-        bool is_un = readInit(QString("./user.ini"), "username", username);
-        bool is_pass = readInit(QString("./user.ini"), "password", password);
-        readInit(QString("./user.ini"), "remember_states", rem_state);
-        readInit(QString("./user.ini"), "auto_states", auto_state);
-        ui->lineEdit_un->setText(username);
-        ui->lineEdit_pass->setText(password);
-        ui->checkBox->setChecked(rem_state=="1");
-        ui->checkBox_2->setChecked(auto_state=="1");
+    QString username;
+    QString password;
+    QString rem_state;
+    QString auto_state;
+    bool is_un = readInit(QString("./user.ini"), "username", username);
+    bool is_pass = readInit(QString("./user.ini"), "password", password);
+    readInit(QString("./user.ini"), "remember_states", rem_state);
+    readInit(QString("./user.ini"), "auto_states", auto_state);
+    ui->lineEdit_un->setText(username);
+    ui->lineEdit_pass->setText(password);
+    ui->checkBox->setChecked(rem_state=="1");
+    ui->checkBox_2->setChecked(auto_state=="1");
     if(ui->checkBox_2->isChecked()){
 
         doLoginButClick();

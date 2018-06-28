@@ -1,11 +1,11 @@
-#ifndef SALEUTIL_H
+﻿#ifndef SALEUTIL_H
 #define SALEUTIL_H
 
 #include <entity/purchase.h>
+#include "util.h"
 
 
-
-class SaleUtil
+class SaleUtil : public Util
 {
 public:
     SaleUtil();

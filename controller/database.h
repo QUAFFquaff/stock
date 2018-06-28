@@ -14,11 +14,6 @@
 
 static bool createConnection()
 {
-//    qDebug() << "start";
-//    QStringList drivers = QSqlDatabase::drivers();
-//    foreach(QString driver, drivers)
-//        qDebug()<<driver;
-
     QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL","connection");
     db.setHostName("dearjohn.cn");
     db.setPort(3306);

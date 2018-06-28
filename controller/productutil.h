@@ -1,11 +1,12 @@
-#ifndef PRODUCTUTIL_H
+﻿#ifndef PRODUCTUTIL_H
 #define PRODUCTUTIL_H
 
 #include <entity/purchase.h>
+#include "util.h"
 
 
 
-class ProductUtil
+class ProductUtil : public Util
 {
 public:
     ProductUtil();

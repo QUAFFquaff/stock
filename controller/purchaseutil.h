@@ -1,11 +1,12 @@
-#ifndef PURCHASEUTIL_H
+﻿#ifndef PURCHASEUTIL_H
 #define PURCHASEUTIL_H
 
 #include <entity/purchase.h>
+#include "util.h"
 
 
 
-class PurchaseUtil
+class PurchaseUtil : public Util
 {
 public:
     PurchaseUtil();

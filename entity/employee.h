@@ -1,4 +1,4 @@
-#ifndef EMPLOYEE_H
+﻿#ifndef EMPLOYEE_H
 #define EMPLOYEE_H
 #include "user.h"
 
@@ -9,8 +9,7 @@ class Employee : public User
 public:
     Employee();
     ~Employee();
-private:
-    string name;
+
 public:
     const string &getName() const;
 
@@ -41,8 +40,9 @@ public:
     void setPosition(const string &position);
 
 private:
-    string employmentDate;
+    string name;
     bool gender;
+    string employmentDate;
     string bornDate;
     double salary;
     int idCard;

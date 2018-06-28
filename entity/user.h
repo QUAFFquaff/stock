@@ -1,4 +1,4 @@
-#ifndef USER_H
+﻿#ifndef USER_H
 #define USER_H
 
 
@@ -15,9 +15,6 @@ public:
     User();
     ~User();
 
-
-private:
-    int id;
 public:
     int getId() const;
 
@@ -44,6 +41,7 @@ private:
     string password;
     string authority;
     Util *util;
+    int id;
 };
 
 #endif // USER_H
