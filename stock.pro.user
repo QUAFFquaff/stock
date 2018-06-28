@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
 <<<<<<< HEAD
+<!-- Written by QtCreator 3.1.1, 2018-06-28T10:21:12. -->
+=======
+<<<<<<< HEAD
 <!-- Written by QtCreator 3.3.0, 2018-06-28T01:00:08. -->
 =======
 <!-- Written by QtCreator 3.1.1, 2018-06-27T23:28:55. -->
 >>>>>>> 2db59a7fae83ce317ec54145dec2c4f63de4f8c9
+>>>>>>> be56c8945e106cc3a5a97e267873d08567512f42
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -229,8 +233,13 @@
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">stock</value>
+<<<<<<< HEAD
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:E:/QT/stock1.2.5/stock.pro</value>
+=======
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">stock2</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:D:/Users/lenovo/Documents/!ProgramZone/QT/stock/stock.pro</value>
+>>>>>>> be56c8945e106cc3a5a97e267873d08567512f42
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.CommandLineArguments"></value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.ProFile">stock.pro</value>
     <value type="bool" key="Qt4ProjectManager.Qt4RunConfiguration.UseDyldImageSuffix">false</value>
