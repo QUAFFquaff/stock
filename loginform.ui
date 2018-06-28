@@ -382,7 +382,7 @@
           </font>
          </property>
          <property name="text">
-          <string>it's pass?</string>
+          <string/>
          </property>
          <property name="echoMode">
           <enum>QLineEdit::Password</enum>
@@ -423,7 +423,7 @@
           </font>
          </property>
          <property name="text">
-          <string>337994130</string>
+          <string/>
          </property>
         </widget>
         <widget class="QLabel" name="label_touxiang">
@@ -467,10 +467,10 @@
           <string>记住密码</string>
          </property>
          <property name="checked">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <property name="autoRepeat">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
         </widget>
         <widget class="QLabel" name="label_1">
