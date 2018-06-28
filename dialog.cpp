@@ -6,15 +6,6 @@
 #include "qdebug.h"
 #include <qstackedwidget.h>
 #include <controller/database.h>
-#include "tab/form11.h"
-#include "tab/form12.h"
-#include "tab/form21.h"
-#include "tab/form22.h"
-#include "tab/form31.h"
-#include "tab/form41.h"
-#include "tab/form51.h"
-#include "tab/form52.h"
-#include "tab/form53.h"
 
 Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
@@ -24,17 +15,6 @@ Dialog::Dialog(QWidget *parent) :
     this->initForm();
     QUIWidget::setFormInCenter(this);
     QTimer::singleShot(100, this, SLOT(initIndex()));
-    stackedWidget = new QStackedWidget;
-    ui->mainLayout->addWidget(stackedWidget);
-    Form11 *f11 = new Form11;stackedWidget->addWidget(f11);
-    Form12 *f12 = new Form12;stackedWidget->addWidget(f12);
-    Form21 *f21 = new Form21;stackedWidget->addWidget(f21);
-    Form22 *f22 = new Form22;stackedWidget->addWidget(f22);
-    Form31 *f31 = new Form31;stackedWidget->addWidget(f31);
-    Form41 *f41 = new Form41;stackedWidget->addWidget(f41);
-    Form51 *f51 = new Form51;stackedWidget->addWidget(f51);
-    Form52 *f52 = new Form52;stackedWidget->addWidget(f52);
-    Form53 *f53 = new Form53;stackedWidget->addWidget(f53);
 }
 
 Dialog::~Dialog()
@@ -84,7 +64,10 @@ void Dialog::initForm()
     ui->widgetNavTop->setTextNormalColor(QColor("#6D7173"));
     ui->widgetNavTop->setTextSelectColor(QColor("#6D7173"));
     ui->widgetNavTop->setBarStyle(SliderBar::BarStyle_Line_Bottom);
-
+    //tableWidget自适应列宽行高
+    ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    //连接菜单槽函数
     connect(ui->widgetNavLeft, SIGNAL(currentItemChanged(int, QString)),this, SLOT(leftItemChanged(int, QString)));
     connect(ui->widgetNavTop, SIGNAL(currentItemChanged(int, QString)),this, SLOT(topItemChanged(int, QString)));
 }
@@ -100,23 +83,23 @@ void Dialog::topItemChanged(int , const QString &item)
     ui->widgetNavLeft->moveFirst();
     if(item == "人事管理"){
         ui->widgetNavLeft->setItems("职工管理;进货商管理");
-        stackedWidget->setCurrentIndex(0);
+        ui->stackedWidget->setCurrentIndex(0);
     }
     else if(item == "销售管理"){
         ui->widgetNavLeft->setItems("销售记录管理;销售统计");
-        stackedWidget->setCurrentIndex(2);
+        ui->stackedWidget->setCurrentIndex(2);
     }
     else if(item == "进货管理"){
         ui->widgetNavLeft->setItems("进货记录管理");
-        stackedWidget->setCurrentIndex(4);
+        ui->stackedWidget->setCurrentIndex(4);
     }
     else if(item == "库存管理"){
         ui->widgetNavLeft->setItems("商品管理");
-        stackedWidget->setCurrentIndex(5);
+        ui->stackedWidget->setCurrentIndex(5);
     }
     else if(item == "系统管理"){
         ui->widgetNavLeft->setItems("添加管理员;修改资料;修改密码");
-        stackedWidget->setCurrentIndex(6);
+        ui->stackedWidget->setCurrentIndex(6);
     }
 }
 
@@ -124,31 +107,31 @@ void Dialog::leftItemChanged(int, const QString &item)
 {
     //左侧菜单函数
     if(item == "职工管理"){
-        stackedWidget->setCurrentIndex(0);
+        ui->stackedWidget->setCurrentIndex(0);
     }
     else if(item == "进货商管理"){
-        stackedWidget->setCurrentIndex(1);
+        ui->stackedWidget->setCurrentIndex(1);
     }
     else if(item == "销售记录管理"){
-        stackedWidget->setCurrentIndex(2);
+        ui->stackedWidget->setCurrentIndex(2);
     }
     else if(item == "销售统计"){
-        stackedWidget->setCurrentIndex(3);
+        ui->stackedWidget->setCurrentIndex(3);
     }
     else if(item == "进货记录管理"){
-        stackedWidget->setCurrentIndex(4);
+        ui->stackedWidget->setCurrentIndex(4);
     }
     else if(item == "商品管理"){
-        stackedWidget->setCurrentIndex(5);
+        ui->stackedWidget->setCurrentIndex(5);
     }
     else if(item == "添加管理员"){
-        stackedWidget->setCurrentIndex(6);
+        ui->stackedWidget->setCurrentIndex(6);
     }
     else if(item == "修改资料"){
-        stackedWidget->setCurrentIndex(7);
+        ui->stackedWidget->setCurrentIndex(7);
     }
     else if(item == "修改密码"){
-        stackedWidget->setCurrentIndex(8);
+        ui->stackedWidget->setCurrentIndex(8);
     }
 }
 
@@ -167,11 +150,23 @@ void Dialog::on_btnMenu_Max_clicked()
         this->setGeometry(qApp->desktop()->availableGeometry());
         this->setProperty("canMove", false);
     }
-
     max = !max;
 }
 
 void Dialog::on_btnMenu_Close_clicked()
 {
     close();
+}
+
+void Dialog::on_pushButton_clicked()
+{
+    QSqlDatabase db = QSqlDatabase::database("connection");
+    QSqlQuery query(db);
+    QString text;
+    query.exec("select  * from provider");
+    while(query.next())
+    {
+        text = query.value(0).toString()+query.value(1).toString()+ query.value(2).toString() +query.value(3).toString();
+        qDebug()<<text;
+    }
 }

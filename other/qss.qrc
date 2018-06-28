@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qss/icon/checkbox.png</file>
+        <file>qss/icon/checkbox_h.png</file>
+        <file>qss/icon/checkbox_p.png</file>
+        <file>qss/icon/downarrow.png</file>
+        <file>qss/icon/hor_scroll_left_arrow.png</file>
+        <file>qss/icon/hor_scroll_right_arrow.png</file>
+        <file>qss/icon/radio.png</file>
+        <file>qss/icon/radio_h.png</file>
+        <file>qss/icon/radio_p.png</file>
+        <file>qss/icon/sizegrip.png</file>
+        <file>qss/icon/ver_scroll_bottom_arrow.png</file>
+        <file>qss/icon/ver_scroll_top_arrow.png</file>
+    </qresource>
+</RCC>
