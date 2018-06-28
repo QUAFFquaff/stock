@@ -6,7 +6,7 @@
 
 QT       += core gui network sql
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
 
 TARGET          = stock
 TEMPLATE        = app
@@ -41,7 +41,9 @@ SOURCES += main.cpp\
     controller/productutil.cpp \
     controller/providerutil.cpp \
     controller/purchaseutil.cpp \
-    entity/user.cpp
+    entity/user.cpp \
+    demo/qcustomplot.cpp \
+    controller/draw.cpp
 
 HEADERS  += \
     loginform.h \
@@ -64,7 +66,9 @@ HEADERS  += \
     controller/providerutil.h \
     controller/purchaseutil.h \
     controller/database.h \
-    entity/user.h
+    entity/user.h \
+    demo/qcustomplot.h \
+    controller/draw.h
 
 FORMS    += \
     loginform.ui \

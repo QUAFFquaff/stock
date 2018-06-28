@@ -38,6 +38,8 @@ private slots:
     void on_checkBox_2_clicked(bool checked);
     void on_checkBox_clicked();
 
+    void on_pushButton_login_clicked();
+
 private:
     Ui::LoginForm *ui;
 };

@@ -31,6 +31,7 @@ private slots:
     void on_btnMenu_Max_clicked();
     void on_btnMenu_Close_clicked();
     void on_pushButton_clicked();
+    void draw();
 };
 
 #endif // DIALOG_H

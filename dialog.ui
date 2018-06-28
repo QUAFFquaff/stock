@@ -2136,7 +2136,18 @@ QLCDNumber
        <widget class="QWidget" name="page_6"/>
        <widget class="QWidget" name="page_7"/>
        <widget class="QWidget" name="page_8"/>
-       <widget class="QWidget" name="page_9"/>
+       <widget class="QWidget" name="page_9">
+        <widget class="QCustomPlot" name="customPlot" native="true">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>20</y>
+           <width>901</width>
+           <height>491</height>
+          </rect>
+         </property>
+        </widget>
+       </widget>
       </widget>
      </item>
     </layout>
@@ -2148,6 +2159,12 @@ QLCDNumber
    <class>SliderBar</class>
    <extends>QWidget</extends>
    <header location="global">demo/sliderbar.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>QCustomPlot</class>
+   <extends>QWidget</extends>
+   <header>qcustomplot.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

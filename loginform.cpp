@@ -42,6 +42,7 @@ LoginForm::LoginForm(QWidget *parent) :
 
     //关联登录按钮点击
     connect(ui->pushButton_login,SIGNAL(clicked()),this,SLOT(doLoginButClick()));
+    ui->pushButton_login->setShortcut(Qt::Key_Return);//small enter
 }
 
 
@@ -174,4 +175,9 @@ void LoginForm::on_checkBox_clicked()
     if(!ui->checkBox->isChecked() && ui->checkBox_2->isChecked()){
         ui->checkBox_2->setChecked(false);
     }
+}
+
+void LoginForm::on_pushButton_login_clicked()
+{
+
 }
