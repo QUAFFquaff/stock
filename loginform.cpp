@@ -5,6 +5,8 @@
 #include "demo/appinit.h"
 
 #include <QGridLayout>
+#include <qsqldatabase.h>
+#include <qsqlquery.h>
 
 
 LoginForm::LoginForm(QWidget *parent) :
@@ -48,22 +50,7 @@ LoginForm::~LoginForm()
     delete ui;
 }
 
-void LoginForm::load()
-{
 
-    QSettings settings;
-    settings.beginGroup("./checkBox");
-    ui->checkBox->setChecked(settings.value("check1", true).toBool());
-    settings.endGroup();
-}
-
-void LoginForm::save()
-{
-    QSettings settings;
-    settings.beginGroup("./checkBox");
-    settings.setValue("check1", ui->checkBox->isChecked());
-    settings.endGroup();
-}
 
 QWidget *LoginForm::getDragnWidget()
 {
@@ -73,10 +60,38 @@ QWidget *LoginForm::getDragnWidget()
 void LoginForm::doLoginButClick()
 {
 //    this->hide();
-    rememberPass();
-    Dialog *d = new Dialog;
-    d->show();
-    save();
+    QString strPwd5 = ui->lineEdit_pass->text();
+    if(NULL == strPwd5)
+        return;
+
+    QByteArray bytePwd = strPwd5.toLatin1();
+    QByteArray bytePwdMd5 = QCryptographicHash::hash(bytePwd, QCryptographicHash::Md5);
+    QString strPwdMd5 = bytePwdMd5.toHex();
+//    ui->lineEdit_pass->setText(strPwdMd5);
+    qDebug()<<strPwdMd5<<"    "<<bytePwdMd5<<endl;
+
+
+    QSqlDatabase db = QSqlDatabase::database("connection");
+    QSqlQuery query(db);
+    QString text;
+    query.exec("insert into employee values(000,\"Izerille\",\"ez\",\"5f4dcc3b5aa765d61d8327deb882cf99\",0,\"33040319980520661x\","
+               "6000,9,\"2016-10-11\",\"1998-05-20\",\"boss\") ");
+//    query.exec("select * from employee where username = \""+ui->lineEdit_un->text()+"\"");
+//    while(query.next())
+//    {
+        qDebug()<<query.value(3);
+//        text = query.value(3).toString();
+//    }
+
+
+//    if (text == strPwdMd5){
+//        rememberPass();
+//        Dialog *d = new Dialog;
+//        d->show();
+//    }else{
+//        qDebug()<<"wrong password";
+//    }
+
 }
 
 void LoginForm::on_btnMenu_Min_clicked()

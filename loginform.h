@@ -14,8 +14,6 @@ class LoginForm :public QWidget
 public:
     explicit LoginForm(QWidget *parent = 0);
     ~LoginForm();
-    void load();
-    void save();
 
 protected:
 
